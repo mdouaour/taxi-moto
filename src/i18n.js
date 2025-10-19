@@ -31,6 +31,10 @@ const resources = {
       feature1: 'Quick and reliable moto-taxi service.',
       feature2: 'Experienced and verified drivers.',
       feature3: 'Easy booking and secure payments.',
+      pendingRides: 'Pending Rides',
+      noPendingRides: 'No pending rides.',
+      accept: 'Accept',
+      bookingAccepted: 'Booking accepted!',
     },
   },
   fr: {
@@ -62,6 +66,10 @@ const resources = {
       feature1: 'Service de moto-taxi rapide et fiable.',
       feature2: 'Chauffeurs expérimentés et vérifiés.',
       feature3: 'Réservation facile et paiements sécurisés.',
+      pendingRides: 'Courses en attente',
+      noPendingRides: 'Aucune course en attente.',
+      accept: 'Accepter',
+      bookingAccepted: 'Course acceptée !',
     },
   },
   ar: {
@@ -93,6 +101,10 @@ const resources = {
       feature1: 'خدمة تاكسي دراجة نارية سريعة وموثوقة.',
       feature2: 'سائقون ذوو خبرة ومعتمدون.',
       feature3: 'حجز سهل ودفع آمن.',
+      pendingRides: 'الرحلات المعلقة',
+      noPendingRides: 'لا توجد رحلات معلقة.',
+      accept: 'قبول',
+      bookingAccepted: 'تم قبول الحجز!',
     },
   },
 };
