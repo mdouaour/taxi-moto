@@ -21,6 +21,8 @@ const resources = {
       destination: 'Destination',
       enterDestination: 'Enter destination',
       requestRide: 'Request Ride',
+      locationError: 'Location Error',
+      yourCurrentLocation: 'Your Current Location',
     },
   },
   fr: {
@@ -42,6 +44,8 @@ const resources = {
       destination: 'Destination',
       enterDestination: 'Entrez la destination',
       requestRide: 'Demander une course',
+      locationError: 'Erreur de localisation',
+      yourCurrentLocation: 'Votre position actuelle',
     },
   },
   ar: {
@@ -63,6 +67,8 @@ const resources = {
       destination: 'الوجهة',
       enterDestination: 'أدخل الوجهة',
       requestRide: 'طلب رحلة',
+      locationError: 'خطأ في تحديد الموقع',
+      yourCurrentLocation: 'موقعك الحالي',
     },
   },
 };
