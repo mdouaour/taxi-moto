@@ -17,6 +17,10 @@ const resources = {
       alreadyHaveAccount: 'Already have an account?',
       dontHaveAccount: "Don't have an account?",
       logout: 'Logout',
+      bookARide: 'Book a Ride',
+      destination: 'Destination',
+      enterDestination: 'Enter destination',
+      requestRide: 'Request Ride',
     },
   },
   fr: {
@@ -34,6 +38,10 @@ const resources = {
       alreadyHaveAccount: 'Vous avez déjà un compte?',
       dontHaveAccount: "Vous n'avez pas de compte?",
       logout: 'Déconnexion',
+      bookARide: 'Réserver une course',
+      destination: 'Destination',
+      enterDestination: 'Entrez la destination',
+      requestRide: 'Demander une course',
     },
   },
   ar: {
@@ -51,6 +59,10 @@ const resources = {
       alreadyHaveAccount: 'هل لديك حساب؟',
       dontHaveAccount: 'ليس لديك حساب؟',
       logout: 'تسجيل الخروج',
+      bookARide: 'حجز رحلة',
+      destination: 'الوجهة',
+      enterDestination: 'أدخل الوجهة',
+      requestRide: 'طلب رحلة',
     },
   },
 };
