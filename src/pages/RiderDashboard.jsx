@@ -3,11 +3,12 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useState, useEffect } from 'react';
 import L from 'leaflet';
+import { supabase } from '../supabaseClient';
 
 // Fix for default marker icon not showing
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png',
+  iconRetinaUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon2x.png',
   iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
   shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
 });
@@ -18,6 +19,8 @@ export default function RiderDashboard() {
   const [currentLocation, setCurrentLocation] = useState(null);
   const [locationError, setLocationError] = useState(null);
   const [destination, setDestination] = useState('');
+  const [bookingStatus, setBookingStatus] = useState(null);
+  const [bookingError, setBookingError] = useState(null);
 
   useEffect(() => {
     if (navigator.geolocation) {
@@ -35,11 +38,38 @@ export default function RiderDashboard() {
     }
   }, []);
 
-  const handleBooking = (e) => {
+  const handleBooking = async (e) => {
     e.preventDefault();
-    if (destination) {
-      alert(`Booking ride to: ${destination}`);
-      // Here you would typically call an API to create the booking
+    setBookingStatus(null);
+    setBookingError(null);
+
+    if (!destination) {
+      setBookingError(t('enterDestination'));
+      return;
+    }
+
+    const { data: { user } } = await supabase.auth.getUser();
+
+    if (!user) {
+      setBookingError(t('notLoggedIn'));
+      return;
+    }
+
+    const { data, error } = await supabase
+      .from('bookings')
+      .insert([
+        {
+          rider_id: user.id,
+          destination: destination,
+          status: 'pending',
+        },
+      ]);
+
+    if (error) {
+      setBookingError(error.message);
+    } else {
+      setBookingStatus(t('bookingSuccess'));
+      setDestination('');
     }
   };
 
@@ -70,6 +100,16 @@ export default function RiderDashboard() {
         <div className="absolute top-4 left-4 bg-white p-4 rounded-lg shadow-md z-[1000] w-full max-w-sm">
           <h2 className="text-lg font-bold mb-2">{t('bookARide')}</h2>
           <form onSubmit={handleBooking}>
+            {bookingStatus && (
+              <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+                {bookingStatus}
+              </div>
+            )}
+            {bookingError && (
+              <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                {bookingError}
+              </div>
+            )}
             <div className="mb-2">
               <label htmlFor="destination" className="block text-sm font-medium text-gray-700">{t('destination')}</label>
               <input

@@ -23,6 +23,8 @@ const resources = {
       requestRide: 'Request Ride',
       locationError: 'Location Error',
       yourCurrentLocation: 'Your Current Location',
+      notLoggedIn: 'You must be logged in to book a ride.',
+      bookingSuccess: 'Ride requested successfully!',
     },
   },
   fr: {
@@ -46,6 +48,8 @@ const resources = {
       requestRide: 'Demander une course',
       locationError: 'Erreur de localisation',
       yourCurrentLocation: 'Votre position actuelle',
+      notLoggedIn: 'Vous devez être connecté pour réserver une course.',
+      bookingSuccess: 'Course demandée avec succès !',
     },
   },
   ar: {
@@ -69,6 +73,8 @@ const resources = {
       requestRide: 'طلب رحلة',
       locationError: 'خطأ في تحديد الموقع',
       yourCurrentLocation: 'موقعك الحالي',
+      notLoggedIn: 'يجب عليك تسجيل الدخول لحجز رحلة.',
+      bookingSuccess: 'تم طلب الرحلة بنجاح!',
     },
   },
 };
