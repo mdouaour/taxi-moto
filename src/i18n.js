@@ -35,6 +35,9 @@ const resources = {
       noPendingRides: 'No pending rides.',
       accept: 'Accept',
       bookingAccepted: 'Booking accepted!',
+      roleUpdateSuccess: 'Role updated successfully!',
+      roleUpdateError: 'Error updating role.',
+      loading: 'Loading...',
     },
   },
   fr: {
@@ -70,6 +73,9 @@ const resources = {
       noPendingRides: 'Aucune course en attente.',
       accept: 'Accepter',
       bookingAccepted: 'Course acceptée !',
+      roleUpdateSuccess: 'Rôle mis à jour avec succès !',
+      roleUpdateError: 'Erreur lors de la mise à jour du rôle.',
+      loading: 'Chargement...',
     },
   },
   ar: {
@@ -105,6 +111,9 @@ const resources = {
       noPendingRides: 'لا توجد رحلات معلقة.',
       accept: 'قبول',
       bookingAccepted: 'تم قبول الحجز!',
+      roleUpdateSuccess: 'تم تحديث الدور بنجاح!',
+      roleUpdateError: 'خطأ في تحديث الدور.',
+      loading: 'جار التحميل...',
     },
   },
 };
