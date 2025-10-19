@@ -75,10 +75,7 @@ export default function RiderDashboard() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <nav className="bg-white shadow-md p-4 flex justify-between items-center">
-        <h1 className="text-xl font-bold">{t('welcome')} - {t('rider')}</h1>
-      </nav>
-      <div className="relative h-[calc(100vh-4rem)]">
+      <div className="relative h-[calc(100vh)]">
         {locationError && (
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded z-[1001]">
             {t('locationError')}: {locationError}

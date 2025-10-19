@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next';
-import LanguageSwitcher from '../components/LanguageSwitcher';
 
 export default function DriverDashboard() {
   const { t } = useTranslation();
@@ -8,7 +7,6 @@ export default function DriverDashboard() {
     <div className="min-h-screen bg-gray-100">
       <nav className="bg-white shadow-md p-4 flex justify-between items-center">
         <h1 className="text-xl font-bold">{t('welcome')} - {t('driver')}</h1>
-        <LanguageSwitcher />
       </nav>
       <div className="container mx-auto p-8">
         <div className="bg-white rounded-lg shadow-md p-6">

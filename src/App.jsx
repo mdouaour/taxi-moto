@@ -6,8 +6,8 @@ import Signup from './pages/Signup';
 import RoleSelect from './pages/RoleSelect';
 import RiderDashboard from './pages/RiderDashboard';
 import DriverDashboard from './pages/DriverDashboard';
-import LanguageSwitcher from './components/LanguageSwitcher';
 import LandingPage from './pages/LandingPage';
+import NavBar from './components/NavBar';
 
 function App() {
   const [session, setSession] = useState(null);
@@ -38,9 +38,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="fixed top-4 right-4 z-50">
-        <LanguageSwitcher />
-      </div>
+      <NavBar />
       <Routes>
         <Route
           path="/"
