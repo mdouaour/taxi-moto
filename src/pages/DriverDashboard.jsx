@@ -108,7 +108,7 @@ export default function DriverDashboard() {
             </Marker>
           )}
         </MapContainer>
-        <div className="absolute top-4 left-4 bg-white p-4 rounded-lg shadow-md z-[1000] w-full max-w-sm">
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 sm:top-4 sm:left-4 sm:translate-x-0 bg-white p-4 rounded-lg shadow-md z-[1000] w-full max-w-sm">
           <h2 className="text-lg font-bold mb-2">{t('pendingRides')}</h2>
           {fetchError && (
             <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
