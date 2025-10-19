@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { supabase } from '../supabaseClient';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useState, useEffect } from 'react';
+import reactLogo from '../assets/react.svg';
 
 export default function NavBar() {
   const { t } = useTranslation();
@@ -30,7 +31,10 @@ export default function NavBar() {
 
   return (
     <nav className="bg-white shadow-md p-4 flex justify-between items-center">
-      <Link to="/" className="text-xl font-bold text-blue-600">{t('appName')}</Link>
+      <Link to="/" className="flex items-center space-x-2">
+        <img src={reactLogo} className="logo react w-8 h-8" alt="React logo" />
+        <span className="text-xl font-bold text-blue-600">{t('appName')}</span>
+      </Link>
       <div className="flex items-center space-x-4">
         <LanguageSwitcher />
         {session ? (
