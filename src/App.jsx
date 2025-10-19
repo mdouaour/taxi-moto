@@ -7,6 +7,7 @@ import RoleSelect from './pages/RoleSelect';
 import RiderDashboard from './pages/RiderDashboard';
 import DriverDashboard from './pages/DriverDashboard';
 import LanguageSwitcher from './components/LanguageSwitcher';
+import LandingPage from './pages/LandingPage';
 
 function App() {
   const [session, setSession] = useState(null);
@@ -44,7 +45,7 @@ function App() {
         <Route
           path="/"
           element={
-            session ? <Navigate to="/role-select" /> : <Navigate to="/login" />
+            session ? <Navigate to="/role-select" /> : <LandingPage />
           }
         />
         <Route path="/login" element={<Login />} />
