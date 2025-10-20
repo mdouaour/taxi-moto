@@ -6,7 +6,7 @@ import RiderDashboard from './pages/rider/RiderDashboard';
 import DriverDashboard from './pages/driver/DriverDashboard';
 import LandingPage from './pages/auth/LandingPage';
 import NavBar from './components/Navigation/NavBar';
-import AdminDashboard from './pages/admin/AdminDashboard';
+import AdminRoutes from './pages/admin/AdminRoutes';
 import { useAuth } from './hooks/useAuth';
 
 function App() {
@@ -45,8 +45,8 @@ function App() {
           element={session ? <DriverDashboard /> : <Navigate to="/login" />}
         />
         <Route
-          path="/admin-dashboard"
-          element={session && userRole === 'admin' ? <AdminDashboard /> : <Navigate to="/login" />}
+          path="/admin-dashboard/*"
+          element={session && userRole === 'admin' ? <AdminRoutes /> : <Navigate to="/login" />}
         />
       </Routes>
     </BrowserRouter>
