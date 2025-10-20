@@ -1,13 +1,13 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { supabase } from './supabaseClient';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import RoleSelect from './pages/RoleSelect';
-import RiderDashboard from './pages/RiderDashboard';
-import DriverDashboard from './pages/DriverDashboard';
-import LandingPage from './pages/LandingPage';
-import NavBar from './components/NavBar';
+import { supabase } from './services/supabaseClient';
+import Login from './pages/auth/Login';
+import Signup from './pages/auth/Signup';
+import RoleSelect from './pages/auth/RoleSelect';
+import RiderDashboard from './pages/rider/RiderDashboard';
+import DriverDashboard from './pages/driver/DriverDashboard';
+import LandingPage from './pages/auth/LandingPage';
+import NavBar from './components/Navigation/NavBar';
 
 function App() {
   const [session, setSession] = useState(null);

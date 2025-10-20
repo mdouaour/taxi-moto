@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
 import { Link, useNavigate } from 'react-router-dom';
-import { supabase } from '../supabaseClient';
+import { supabase } from '../../services/supabaseClient';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useState, useEffect } from 'react';
-import reactLogo from '../assets/react.svg';
+import reactLogo from '../../assets/react.svg';
 
 export default function NavBar() {
   const { t } = useTranslation();

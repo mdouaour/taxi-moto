@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { supabase } from '../supabaseClient';
+import { supabase } from '../../services/supabaseClient';
 import { Link, useNavigate } from 'react-router-dom';
 
 export default function Signup() {
