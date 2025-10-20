@@ -1,6 +1,4 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { supabase } from './services/supabaseClient';
 import Login from './pages/auth/Login';
 import Signup from './pages/auth/Signup';
 import RoleSelect from './pages/auth/RoleSelect';
@@ -8,25 +6,11 @@ import RiderDashboard from './pages/rider/RiderDashboard';
 import DriverDashboard from './pages/driver/DriverDashboard';
 import LandingPage from './pages/auth/LandingPage';
 import NavBar from './components/Navigation/NavBar';
+import AdminDashboard from './pages/admin/AdminDashboard';
+import { useAuth } from './hooks/useAuth';
 
 function App() {
-  const [session, setSession] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session);
-      setLoading(false);
-    });
-
-    const {
-      data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session);
-    });
-
-    return () => subscription.unsubscribe();
-  }, []);
+  const { session, userRole, loading } = useAuth();
 
   if (loading) {
     return (
@@ -59,6 +43,10 @@ function App() {
         <Route
           path="/driver-dashboard"
           element={session ? <DriverDashboard /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/admin-dashboard"
+          element={session && userRole === 'admin' ? <AdminDashboard /> : <Navigate to="/login" />}
         />
       </Routes>
     </BrowserRouter>
